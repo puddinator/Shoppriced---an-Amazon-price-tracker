@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <select class="form-select mx-auto w-auto" id="product" name="product" form="untrackform">
+            <option disabled selected>Product</option>
+            {% for trackedname in trackednames %}
+                <option value="{{ trackedname["product"] }}">{{ trackedname["product"] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <form action="/trackremove" method="post" id="untrackform">
+            <button class="btn btn-primary" type="submit">Untrack</button>
+        </form>
+    </div>
+{% endblock %}

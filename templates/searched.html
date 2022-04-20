@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped table-hover" style="width: 80%">
+        <thead>
+            <tr>
+                <th class="text-start" style="width: 20%">Image</th>
+                <th class="text-start" style="width: 45%">Name</th>
+                <th class="text-justify" style="width: 10%">Price</th>
+                <th class="text-justify" style="width: 10%">Rating</th>
+                <th class="text-justify" style="width: 10%">Review Count</th>
+                <th class="text-justify" style="width: 5%">Track</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td class="text-start">
+                        <div class="img-container border">
+                            <img src="{{ record["imageurl"] }}" class="rounded" alt="Product Image">                            
+                        </div>
+                    </td>
+                    <td class="text-start">
+                        <a href=" {{ record["url"] }} " target="_blank">{{ record["title"] }}</a>
+                    </td>
+                    <td class="text-justify">{{ record["price"] | usd }}</td>
+                    <td class="text-justify">{{ record["rating"] }}</td>
+                    <td class="text-justify">{{ record["review_count"] }}</td>
+                    <td class="text-justify">
+                        <form action="/track" method="get">
+                            <button class="btn btn-primary" type="submit" name="name" value="{{ record["title"] }}">Track</button>
+                            <input type="hidden" name="price" value="{{ record["price"] }}" />
+                            <input type="hidden" name="url" value="{{ record["url"] }}" />
+                            <input type="hidden" name="imageurl" value="{{ record["imageurl"] }}" />
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
