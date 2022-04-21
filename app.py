@@ -10,6 +10,8 @@ from helpers import apology, login_required, lookup, usd
 
 import datetime
 
+os.chdir('/home/ubuntu/flaskapp')
+
 # Configure application
 app = Flask(__name__)
 
