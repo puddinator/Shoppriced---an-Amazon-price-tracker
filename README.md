@@ -3,7 +3,7 @@
 https://youtu.be/cyR8gnFNnOo
 #### Description:
 
-Built for the final CS50 Proect, deployed on Oracle and accessible at https://[129.150.38.171/login](http://129.150.38.171/login) - due to an issue with security (I believe, it crashes upon any post request)
+Built for the final CS50 Proect, deployed on Oracle and accessible at [129.150.38.171/login](http://129.150.38.171/login) - due to an issue with security (I believe, it crashes upon any post request)
 
 For this project, I wanted to develop a price tracker and comparison website and browser extension for popular local ecommerce sites like Shopee and Lazada. However, I found out early on about the difficulties of scraping on Shopee, which as far as I know does not have an API for readily retrieved prices and has a slew of anti-scraping features (boo...) Hence, I settled for Amazon to learn the basics of scraping.
 
